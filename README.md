@@ -2,12 +2,12 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![Diagram](ELKStackProject/Diagram.png)
+![Diagram](ELKStackProject/Diagram.png) Image broken
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  - _TODO: Enter the playbook file._ Which playbook?
 
 This document contains the following details:
 - Description of the Topologu
@@ -23,9 +23,9 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_  Secure/reliable, access?
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____. Application and server??
 - _TODO: What does Filebeat watch for?_
 - _TODO: What does Metricbeat record?_
 
@@ -43,8 +43,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from my own IP address
 
 Machines within the network can only be accessed by _____.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
