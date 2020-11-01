@@ -57,23 +57,28 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the same results can be replicated across multiple machines with very little effort. Automation removes the need to manually configure each machine and saves time.
 
 The playbooks implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Installs docker
+- Installs python
+- Allocates more memory to the Elk Stack
+- Downloads and launches the Elk container
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The result of running `docker ps` after successfully configuring the ELK instance should read something along the lines of:
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+sysadmin@elk:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
+842caa422ed8        sebp/elk            "/usr/local/bin/star…"   3 hours ago         Up 3 hours          0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
+sysadmin@elk:~$
 
 ### Target Machines & Beats
-This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+This ELK server is configured to monitor the following machines: 10.0.0.6 (VM1), 10.0.0.4 (VM2)
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+Filebeat, on VM1 and VM2
+Metricbeat on VM1 and VM2
 
-These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+Filebeat moniters and collects system logs from the Web VMs. These logs events are exported to our instance of Kibana.
+
+Metricbeat collects metrics from the operating system and from services running on the server. These metrics are also exported to our instance of Kibana.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -82,6 +87,3 @@ SSH into the control node and follow the steps below:
 - Copy the Install-Elk file to the ansible container.
 - Update the conf file to include the correct hosts, usernames and IPs
 - Run the playbook, and navigate to the target machines to check that the installation worked as expected. Navigate to http://[Your IP]:5601/app/kibana#/home
-
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
