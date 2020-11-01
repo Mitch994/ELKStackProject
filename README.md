@@ -5,9 +5,7 @@ The files in this repository were used to configure the network depicted below.
 ![Diagram](Images/Diagram.png)
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
-
-  - _TODO: Enter the playbook file._ Which playbook?
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the provided yml files may be used to install only certain pieces of it, such as Filebeat.
 
 This document contains the following details:
 - Description of the Topology
@@ -29,14 +27,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name      | Function       | IP Address | Operating System |
+|-----------|----------------|------------|------------------|
+| JumpBox   | Gateway        | 10.0.0.5   | Ubuntu           |
+| VM1       | Webserver      | 10.0.0.6   | Ubuntu           |
+| VM2       | Webserver      | 10.0.0.4   | Ubuntu           |
+| Elk Stack | System Logging | 10.1.0.4   | Ubuntu           |
 
 ### Access Policies
 
@@ -44,23 +41,22 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from my own IP address
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the JumpBox VM (10.0.0.5).
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name      | Accessibility                                    | Whitelisted IP Addresses                                   |
+|-----------|--------------------------------------------------|------------------------------------------------------------|
+| JumpBox   | Public (Port 22 access with appropriate ssh key) | 10.0.0.4, 10.0.0.6, 10.1.0.4, 20.37.49.182, Workstation IP |
+| VM1       | Private                                          | 10.0.0.4, 10.0.0.5, 20.37.49.182, Workstation IP           |
+| VM2       | Private                                          | 10.0.0.5, 10.0.0.6, 20.37.49.182, Workstation IP           |
+| Elk Stack | Private                                          | 10.0.0.4, 10.0.0.5, 10.0.0.6, Workstation IP               |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the same results can be replicated across multiple machines with very little effort. Automation removes the need to manually configure each machine and saves time.
 
-The playbook implements the following tasks:
+The playbooks implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ...
 - ...
