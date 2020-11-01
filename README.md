@@ -66,10 +66,11 @@ The result of running `docker ps` after successfully configuring the ELK instanc
 
 sysadmin@elk:~$ sudo docker ps
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                              
+CONTAINER ID     IMAGE        COMMAND                CREATED           STATUS              PORTS                                                                              
+
 NAMES
-842caa422ed8        sebp/elk            "/usr/local/bin/star…"   3 hours ago         Up 3 hours          0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
-sysadmin@elk:~$
+842caa422ed8     sebp/elk    "/usr/local/bin/star…"  3 hours ago       Up 3 hours          0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp elk
+
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines: 10.0.0.6 (VM1), 10.0.0.4 (VM2)
