@@ -4,7 +4,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![UpdatedDiagram](https://github.com/Mitch994/ELKStackProject/assets/67949868/5f5d508b-75f0-4022-9165-5ffc6facd316)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the provided yml files may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK Stack (Elasticsearch, Logstash, and Kibana Stack) deployment on Azure. An ELK stack gives you the ability to aggregate logs from all your systems and applications, analyze these logs, and create visualizations for application and infrastructure monitoring, faster troubleshooting, security analytics. The files can be used to recreate the entire deployment pictured above. Alternatively, select portions of the provided yml files may be used to install only certain pieces of it, such as Filebeat.
 
 This document contains the following details:
 - Description of the Topology
